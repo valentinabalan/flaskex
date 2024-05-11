@@ -26,7 +26,7 @@ jobs:
 
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
-       with:
+      with:
         image-ref: '${{ secrets.DOCKERHUB_USERNAME }}/flaskex:${{ github.sha }}'
         format: 'table'
         exit-code: '1'
