@@ -21,3 +21,9 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+    - name: Build Docker image
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/flaskex:${{ github.sha }} . 
+
+    - name: Test Image
+      run: docker images 
+
